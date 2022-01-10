@@ -82,8 +82,12 @@ class WP_Subtitle {
 		if ( is_preview() ) {
 
 			if ( isset( $_GET['preview_id'] ) ) {
-				$p =  wp_get_post_autosave( $this->post_id );
-				return get_post_meta( $p->ID, $this->get_post_meta_key(), true );
+                $p =  wp_get_post_autosave( $_GET['preview_id'] );
+                return get_post_meta(
+                    is_a($p, 'WP_Post') ? $p->ID : $_GET['preview_id'],
+                    $this->get_post_meta_key(),
+                    true
+                );
 			}
 
 			if ( $revisions = wp_get_post_revisions( $this->post_id ) ) {

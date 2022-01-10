@@ -1,0 +1,6 @@
+{
+    "name": "benhuson/wp-subtitle",
+    "description": "Adds a subtitle field to pages and posts. Possible to add support for custom post types.",
+    "version": "3.4.1",
+    "type": "wordpress-plugin"
+}
